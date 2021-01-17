@@ -1,0 +1,34 @@
+# Template for running masscan on a target/list of targets
+name: Nmap Scanner
+
+# add your `on` trigger statement
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Update the packages
+        run: sudo apt-get update -y
+
+      - name: Install nmap
+        run: sudo apt-get install -y nmap
+
+      # We are using masscan at rate 1000 because GitHub offers pretty good bandwidth > 1Gbps
+      # Also we want to stay under the radar and not put too much pressure on the network so as
+      # to trigger abuse detection mechanisms!!!
+      #
+      # you can specify a custom set of ports and targets and output filename
+      - name: Run masscan on a set of targets
+        run: |
+          sudo {command}
+
+      - name: Commit and push
+        uses: stefanzweifel/git-auto-commit-action@v4.2.0
+        with:
+          commit_message: Commit nmap results (${{ github.sha }})
+          commit_user_name: 'Nmap Runner'
+          commit_user_email: 'github-actions.nmap@github.com'

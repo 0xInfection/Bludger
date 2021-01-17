@@ -1,0 +1,41 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+#-:-:-:-:-:-:-:-:-:-:-:-#
+#       Parasite        #
+#-:-:-:-:-:-:-:-:-:-:-:-#
+
+# Author: 0xInfection
+# This module requires Parasite
+# https://github.com/0xInfection/Parasite
+
+import logging, sys
+from core.colors import G
+from core.requester import sendQuery
+
+baseurl = 'https://api.github.com/user/repos'
+
+def createRepo(reponame: str, isprivate: bool):
+    '''
+    Creates a repository for the authenticated user
+    '''
+    log = logging.getLogger('createRepo')
+
+    if not reponame or not isprivate:
+        log.error('One or more required parameters got passed invalid params.')
+        return None
+
+    payload = {
+        "name"          : reponame,
+        "description"   : "My Custom Automation Setup",
+        "private"       : isprivate,
+    }
+
+    req = sendQuery("POST", baseurl, json=payload)
+    if req is not None:
+        print(G, 'Successfully created: %s' % reponame)
+        log.debug('ID: ' + str(req.json()['id']) + ' | Repository URL: ' + req.json()['html_url'])
+        return req.json()['full_name']
+    else:
+        log.fatal('Repository creation failed. Stopping all processes.')
+        sys.exit(1)

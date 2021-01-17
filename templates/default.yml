@@ -1,0 +1,14 @@
+# Template for running masscan on a target/list of targets
+name: Basic Setup
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Say "Hello World"
+        run: echo "Hello World, mate. Welcome to GitHub Actions."
