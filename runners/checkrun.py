@@ -67,7 +67,7 @@ def checkRun(slug: str, template: str, path=None):
                             laststep = step['name']
 
                     print(GR, 'Last step executed: %s' % laststep)
-                    log.info('Pausing for 7 seconds before checking again...')
+                    log.debug('Pausing for 7 seconds before checking again...')
                     time.sleep(7)
                     continue
 
