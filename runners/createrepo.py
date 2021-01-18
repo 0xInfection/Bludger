@@ -25,6 +25,8 @@ def createRepo(reponame: str, isprivate: bool):
         log.error('One or more required parameters got passed invalid params.')
         return None
 
+    log.info('Trying to create the repository.')
+
     payload = {
         "name"          : reponame,
         "description"   : "My Custom Automation Setup",
@@ -33,8 +35,8 @@ def createRepo(reponame: str, isprivate: bool):
 
     req = sendQuery("POST", baseurl, json=payload)
     if req is not None:
-        print(G, 'Successfully created: %s' % reponame)
-        log.debug('ID: ' + str(req.json()['id']) + ' | Repository URL: ' + req.json()['html_url'])
+        print(G, 'Successfully created: %s' % req.json()['html_url'])
+        log.debug('Repo ID: ' + str(req.json()['id']) + ' | Repo URL: ' + req.json()['html_url'])
         return req.json()['full_name']
     else:
         log.fatal('Repository creation failed. Stopping all processes.')

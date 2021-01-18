@@ -37,7 +37,6 @@ def kickOff():
         sys.exit(1)
 
     reposlug = config.REPO_SLUG
-    log.info('Trying to create the repository.')
 
     if config.CREATE_REPO:
         xname = createRepo(config.REPO_NAME, config.IS_PRIVATE)

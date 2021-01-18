@@ -18,6 +18,7 @@ ACCESS_TOKEN = None
 
 # Headers which we send to the github api
 HEADERS = {
+    'User-Agent': 'parasite/0.1.0',
     'Accept': 'application/vnd.github.v3+json',
     'Authorization': 'token {}'
 }
@@ -45,6 +46,9 @@ REPO_SLUG = 'user/repo'
 
 # repository to delete
 DELETE_REPO = None
+
+# branch
+BRANCH = 'main' # or 'master'
 
 #############################################
 ##            TEMPLATING ENGINE            ##
@@ -81,3 +85,6 @@ HTTP_TIMEOUT = 5
 
 # debug level
 DEBUG_LEVEL = 30
+
+# whether to print out API responses
+DEBUG = False

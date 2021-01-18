@@ -63,3 +63,22 @@ def calcLogLevel(args):
         baseloglevel = 50
     return baseloglevel
 
+def pheaders(tup: dict):
+    '''
+    This module prints out the headers as received
+    '''
+    #print(GR, 'Receiving headers...\n')
+    print(color.GREY,'\n  '+color.UNDERLINE+'RESPONSE HEADERS'+color.END+color.GREY+':'+'\n')
+    for key, val in tup.items():
+        print('  ',color.CYAN+key+': '+color.ORANGE+val)
+
+def pbody(body: str):
+    '''
+    Prints out the response body of the request
+    '''
+    print(color.GREY,'\n  '+color.UNDERLINE+'RESPONSE BODY'+color.END+color.GREY+':'+'\n'+color.END)
+    if not body.strip():
+        print('Empty body response.\n')
+    else:
+        print(body, '\n')
+

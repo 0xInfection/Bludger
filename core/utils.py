@@ -13,7 +13,7 @@ import sys
 import glob
 import logging
 
-def checkStatus(code: int):
+def checkStatus(code: int, redir=False):
     '''
     Checks status from the HTTP status-codes
     '''
@@ -21,6 +21,10 @@ def checkStatus(code: int):
     if str(code).startswith('2'):
         log.debug('Action successfully completed.')
         return True
+    if redir:
+        if code == 302:
+            log.warn('Received HTTP redirection code 302.')
+            return True
     # These below have good documentation
     elif code == 304:
         log.debug('Received 304: Not modified')
@@ -33,7 +37,7 @@ def checkStatus(code: int):
     elif code == 422:
         log.error('Invalid API query. Status 422: Unprocessable Identity.')
     else:
-        log.error('Something went wrong while repo creation.')
+        log.error('Something went wrong.')
     return False
 
 

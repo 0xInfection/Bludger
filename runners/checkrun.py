@@ -35,6 +35,15 @@ def checkRun(slug: str, template: str, path=None):
 
     if req is not None:
         # get the last workflow run
+        # retry for one more time if the API doesn't give a valid response
+        while True:
+            if len(req.json()['workflow_runs']) == 0:
+                log.warn('Waiting for workflow to trigger...')
+                time.sleep(10)
+                req = sendQuery("GET", runsurl, params=None)
+            else:
+                break
+
         jobid = req.json()['workflow_runs'][0]['id']
         jobsurl = jobsurl.format(slug, jobid)
         logsurl = req.json()['workflow_runs'][0]['logs_url']
@@ -58,8 +67,8 @@ def checkRun(slug: str, template: str, path=None):
                             laststep = step['name']
 
                     print(GR, 'Last step executed: %s' % laststep)
-                    log.info('Pausing for 5 seconds before checking again...')
-                    time.sleep(5)
+                    log.info('Pausing for 7 seconds before checking again...')
+                    time.sleep(7)
                     continue
 
         if req.json()['jobs'][0]['conclusion'] != "success":
@@ -68,5 +77,5 @@ def checkRun(slug: str, template: str, path=None):
 
         if path is not None:
             # fetch the logs now
-            logsurl = logsurl.format(slug, jobid)
+            #logsurl = logsurl.format(slug, jobid)
             getLogs(logsurl, path)

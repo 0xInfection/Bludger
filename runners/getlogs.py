@@ -28,27 +28,18 @@ def getLogs(url: str, path: str):
         log.info('Creating the dir: %s' % path)
         os.makedirs(path)
 
-    fileloc = None
-    # First request to the API
-    req = sendQuery("GET", url, params=None)
-    # grab the location headers
+    req = sendQuery("GET", url, redirection=True, stream=True, params=None)
     if req is not None:
-        fileloc = req.headers['location']
-        log.debug('Our logs are at: %s' % fileloc)
+        try:
+            filename = re.search(r'(?i)filename=([^;]+)', req.headers['content-disposition'])
+            log.debug('Inflating the zipped logs: %s' % filename.group(1))
 
-    if fileloc:
-        req = sendQuery("STREAM", fileloc)
-        if req is not None:
-            try:
-                filename = re.search(r'(?i)filename=([^;]+)', req.headers['content-disposition'])
-                log.debug('Inflating the zipped logs: %s' % filename.group(1))
+            zipf = zipfile.ZipFile(io.BytesIO(req.content))
+            zipf.extractall(path)
 
-                zipf = zipfile.ZipFile(io.BytesIO(req.content))
-                zipf.extractall(path)
+            print(G, 'Successfully saved all logs to: %s' % path)
 
-                print(G, 'Successfully saved all logs to: %s' % path)
-
-            except Exception as e:
-                log.error('Error: %s' % e.__str__())
+        except Exception as e:
+            log.error('Error: %s' % e.__str__())
 
     return None

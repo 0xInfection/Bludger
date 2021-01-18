@@ -65,6 +65,8 @@ optional.add_argument('--public', dest='public', action='store_true',
                 help='Sets the visibility of a created repository as public. Valid only when -n is specified.')
 optional.add_argument('--clone', dest='clone', action='store_true',
                 help='Clones the repository to the current working directory.')
+optional.add_argument('--debug', dest='debug', action='store_true',
+                help='Enables debug mode & prints out HTTP API responses and headers.')
 
 args = parser.parse_args()
 
@@ -88,6 +90,9 @@ if args.repo:
     else:
         config.CREATE_REPO = True
         config.REPO_NAME = args.repo
+
+if args.debug:
+    config.DEBUG = True
 
 if args.public:
     config.IS_PRIVATE = False
