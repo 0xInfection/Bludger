@@ -30,8 +30,9 @@ __homepage__ = 'https://github.com/0xInfection/Parasite'
 
 __copyright__ = f'Copyright (c) 2021-{datetime.now().year.__str__()} @{__username__}'
 
-__about__ =  'Parasite is a GitHub Actions Automation Framework build around the idea'
-__about__ += ' to make GitHub Actions easily available for use for off and on projects.'
-__about__ += ' It features a powerful templating engine where you can easily set up your'
-__about__ += ' own scripts and execute them in a matter of seconds.'
+__about__ =  'Parasite is a GitHub Actions Automation Framework built around the idea'
+__about__ += ' to make GitHub Actions easily accessible and available for off and on projects.'
+__about__ += ' It features a powerful templating engine coupled with automatic repository'
+__about__ += ' creation/deletion/cloning which allows you to easily set up your'
+__about__ += ' own scripts along with templates and execute them in a matter of seconds.'
 __about__ += ' Please use this tool responsibly.'

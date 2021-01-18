@@ -11,14 +11,15 @@
 
 import logging, sys
 import argparse, config
-from core.colors import color, G
+from core.colors import C, color, G
 from core.info import (
     __version__,
     __author__,
     __username__,
     __license__,
     __homepage__,
-    __about__
+    __about__,
+    __copyright__
 )
 
 print('''
@@ -37,8 +38,8 @@ optional = parser.add_argument_group('Optional Arguments')
 # Required arguments - either of these are required
 required.add_argument('-n', '--new', dest='repo',
                 help='Creates a new repository with supplied name, invalid if -s is specified.')
-required.add_argument('-A', '--token',
-                help='GitHub personal access token to use', dest='token')
+required.add_argument('-A', '--token', dest='token',
+                help='GitHub personal access token to use, not required if already configured in `config.py`')
 required.add_argument('-s', '--slug', dest='slug',
                 help='Repository slug if you want to use an existing repository, invalid when -n is specified')
 
@@ -76,11 +77,12 @@ if not len(sys.argv) > 1:
     sys.exit(0)
 
 if args.version:
-    print(G, 'About: %s' % __about__)
-    print(G, 'Author: %s (@%s)' % (__author__, __username__))
-    print(G, 'Homepage: %s' % __homepage__)
-    print(G, 'Version: %s' % __version__)
-    print(G, 'License: %s' % __license__)
+    print(C, color.BOLD+'About:'+color.END+' %s' % __about__)
+    print(C, color.BOLD+'Author:'+color.END+' %s (@%s)' % (__author__, __username__))
+    print(C, color.BOLD+'Homepage:'+color.END+' %s' % __homepage__)
+    print(C, color.BOLD+'Version:'+color.END+' %s' % __version__)
+    print(C, color.BOLD+'License:'+color.END+' %s' % __license__)
+    print(C, color.BOLD+'Copyright:'+color.END+' %s' % __copyright__)
     sys.exit(0)
 
 if args.repo:
