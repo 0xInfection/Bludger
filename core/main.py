@@ -9,6 +9,7 @@
 # This module requires Parasite
 # https://github.com/0xInfection/Parasite
 
+from runners.pushrepo import pushRepo
 from core.options import *
 import logging, config
 from core.utils import checkTemplate
@@ -72,6 +73,9 @@ def kickOff():
 
     if config.CLONE_REPO:
         cloneRepo(reposlug)
+
+    if config.TOPUSH:
+        pushRepo(config.TOPUSH)
 
     if config.DELETE_REPO:
         deleteRepo(config.DELETE_REPO)

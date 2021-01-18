@@ -50,6 +50,9 @@ DELETE_REPO = None
 # branch
 BRANCH = 'main' # or 'master'
 
+# reponame to push
+TOPUSH = None
+
 #############################################
 ##            TEMPLATING ENGINE            ##
 #############################################

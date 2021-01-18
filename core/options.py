@@ -50,6 +50,8 @@ optional.add_argument('-T', '--template', dest='template',
                 help='Configuration template to use for creating a workflow')
 optional.add_argument('-C', '--command', dest='command',
                 help='Command to run for the specified template (if it accepts one)')
+optional.add_argument('-P', '--push', dest='topush',
+                help='Commits and pushes a local changes to GitHub (must be present under custom/ folder)')
 optional.add_argument('-D', '--delete', dest='delete',
                 help='Deletes a repository.')
 optional.add_argument('-t', '--timeout', dest='timeout', type=int,
@@ -104,6 +106,9 @@ if args.slug:
 
 if args.token:
     config.ACCESS_TOKEN = args.token
+
+if args.topush:
+    config.TOPUSH = args.topush
 
 if args.logs:
     config.SAVE_LOGS = True
