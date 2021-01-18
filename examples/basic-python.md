@@ -68,10 +68,9 @@ Lets see a simplified usage of things:
     ```bash
     ./parasite.py --push pythontest
     ```
-- Time for the actual hack. Specify your command through the `-C` switch. You can specify multiple commands using bash separators liek `&&` or semicolons `;`.
+- Time for the actual hack. Specify your command through the `-C` switch. You can specify multiple commands using bash separators liek `&&` or semicolons `;`. Also we instruct Parasite to save the runtime logs locally in a new folder named `mypage/`.
     ```bash
-    /parasite.py -s {username}/pythontest -T basic-python -C 'python hello.py && python yo.py'
+    ./parasite.py -s {username}/pythontest -T basic-python -C 'python hello.py && python yo.py' --save-logs ../mypage/
     ```
 
-
-Thats it!
+Thats it! Now go ahead and check your results. Additionally if your scripts generate an output file, you can reclone the repository and checkout the output files. Parasite is as flexible as your thoughts!

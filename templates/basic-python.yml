@@ -3,7 +3,6 @@
 name: Custom Python Automation
 
 on:
-  push:
   workflow_dispatch:
 
 jobs:
