@@ -1,0 +1,22 @@
+# Template for basic python automation
+name: Basic shell
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Run your command
+        run: {command}
+
+      - name: Commit and push
+        uses: stefanzweifel/git-auto-commit-action@v4.2.0
+        with:
+          commit_message: Commit output files
+          commit_user_name: 'Basic Shell'
+          commit_user_email: 'github-actions.shell@github.com'

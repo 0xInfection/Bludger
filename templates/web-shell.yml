@@ -1,0 +1,28 @@
+# Template for running a custom shell command via GitHub Actions
+# Equivalent to a "shell on the web" thing
+# Variables: none to be edited atm
+
+name: "GitHub Actions Shell"
+
+on:
+  workflow_dispatch:
+    inputs:
+      command:
+        description: 'The command to run'
+        required: true
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    # Lets you execute a custom command via the GitHub Actions tab
+    # your repository itself on GitHub.
+    - run: ${{ github.event.inputs.command }}
+
+    env:
+      GIT_COMMITTER_NAME: GitHub Actions Shell
+      GIT_AUTHOR_NAME: GitHub Actions Shell
+      EMAIL: github-actions.shell@github.com
