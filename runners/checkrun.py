@@ -45,6 +45,7 @@ def checkRun(slug: str, template: str, path=None):
                 break
 
         jobid = req.json()['workflow_runs'][0]['id']
+        print(G, 'Job ID:', jobid)
         jobsurl = jobsurl.format(slug, jobid)
         logsurl = req.json()['workflow_runs'][0]['logs_url']
         log.debug('Jobs URL: %s' % jobsurl)

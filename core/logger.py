@@ -17,7 +17,7 @@ class CustomFormatter(logging.Formatter):
     Customising my style of logging the results
     '''
     ftl_fmt  = R+" FATAL: %(msg)s"
-    info_fmt = color.BOLD+color.CYAN+"[+] INFO: "+color.END+"%(msg)s"
+    info_fmt = color.BOLD+color.PURPLE+"[+] INFO: "+color.END+"%(msg)s"
     err_fmt  = color.BOLD+color.RED+"[-] ERROR: "+color.END+"%(msg)s"
     crt_fmt  = color.BOLD+color.RED+"[-] CRITICAL: "+color.END+"%(msg)s"
     dbg_fmt  = color.BOLD+color.CYAN+"[~] DEBUG: "+color.END+"%(module)s: %(msg)s"

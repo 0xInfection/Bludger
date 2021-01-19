@@ -79,6 +79,9 @@ SAVE_LOGS = False
 # path to save the logs, again, dependent upon the above switch
 LOGS_DIR = None
 
+# cancels a workflow
+TOCANCEL = None
+
 #############################################
 ##             GENERIC OPTIONS             ##
 #############################################

@@ -9,11 +9,12 @@
 # This module requires Parasite
 # https://github.com/0xInfection/Parasite
 
-from runners.pushrepo import pushRepo
 from core.options import *
 import logging, config
 from core.utils import checkTemplate
 from runners.deleterepo import deleteRepo
+from runners.cancelflow import cancelWorkflow
+from runners.pushrepo import pushRepo
 from core.templating import getTemplate
 from runners.commitfile import commitFile
 from runners.createrepo import createRepo
@@ -70,6 +71,9 @@ def kickOff():
         else:
             log.fatal('Dang, something went wrong while committing the file.')
             sys.exit(1)
+
+    if config.TOCANCEL:
+        cancelWorkflow(reposlug, config.TOCANCEL)
 
     if config.CLONE_REPO:
         cloneRepo(reposlug)
