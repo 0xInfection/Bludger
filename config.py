@@ -45,7 +45,7 @@ IS_PRIVATE = True
 REPO_SLUG = 'user/repo'
 
 # repository to delete
-DELETE_REPO = None
+TODELETE = None
 
 # branch
 BRANCH = 'main' # or 'master'
@@ -69,6 +69,9 @@ COMMAND = None
 #############################################
 ##             MONITOR MODE                ##
 #############################################
+
+# the workflow to trigger
+TOTRIGGER = None
 
 # whether to enter monitor mode or not
 MONITOR = True

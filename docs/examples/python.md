@@ -1,7 +1,7 @@
-## Using Masscan
+## Using Python
 
 ### Template
-The masscan template has been already provided alongwith this release. The template looks like:
+The python template has been already provided alongwith this release. The template looks like:
 ```yml
 # Template for basic python automation
 name: Custom Python Automation

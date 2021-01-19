@@ -9,6 +9,7 @@
 # This module requires Parasite
 # https://github.com/0xInfection/Parasite
 
+from runners.deleteflow import deleteFlow
 from core.options import *
 import logging, config
 from core.utils import checkTemplate
@@ -72,6 +73,15 @@ def kickOff():
             log.fatal('Dang, something went wrong while committing the file.')
             sys.exit(1)
 
+    if config.TOTRIGGER:
+        triggerWorkflow(reposlug, config.TOTRIGGER)
+        if config.MONITOR:
+            log.info('Entering monitor mode...')
+            if config.SAVE_LOGS:
+                checkRun(reposlug, config.TOTRIGGER, path=config.LOGS_DIR)
+            else:
+                checkRun(reposlug, config.TOTRIGGER)
+
     if config.TOCANCEL:
         cancelWorkflow(reposlug, config.TOCANCEL)
 
@@ -81,5 +91,10 @@ def kickOff():
     if config.TOPUSH:
         pushRepo(config.TOPUSH)
 
-    if config.DELETE_REPO:
-        deleteRepo(config.DELETE_REPO)
+    if config.TODELETE:
+        # we know its a repository
+        if '/' in config.TODELETE:
+            deleteRepo(config.TODELETE)
+        # we know it is a file
+        else:
+            deleteFlow(reposlug, config.TODELETE)

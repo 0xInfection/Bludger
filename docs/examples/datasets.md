@@ -1,4 +1,4 @@
-## Downloading and parsing datasets
+## Downloading and Parsing Datasets
 
 Lets take a look at an example where we will download, parse and analyse a large dataset for research purposes. In this example we'll be using a small dataset, the UDP mDNS dataset from Rapid7 SonarDB.
 

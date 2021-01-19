@@ -45,21 +45,21 @@ required.add_argument('-s', '--slug', dest='slug',
 
 # Optional arguments
 optional.add_argument('-S', '--save-logs', dest='logs',
-                help='Destination path to save logs of the current workflow run')
+                help='Destination path to save logs of the current workflow run.')
 optional.add_argument('-T', '--template', dest='template',
-                help='Configuration template to use for creating a workflow')
+                help='Configuration template to use for creating a workflow.')
 optional.add_argument('-C', '--command', dest='command',
-                help='Command to run for the specified template (if it accepts one)')
+                help='Command to run for the specified template (if it accepts one).')
 optional.add_argument('-P', '--push', dest='topush',
-                help='Commits and pushes a local changes to GitHub (must be present under custom/ folder)')
+                help='Commits and pushes a local changes to GitHub (must be present under custom/ folder).')
 optional.add_argument('-D', '--delete', dest='delete',
-                help='Deletes a repository.')
+                help='Deletes something, it can be either a repository slug or a workflow template.')
 optional.add_argument('-t', '--timeout', dest='timeout', type=int,
                 help='HTTP timeout value in seconds (default: 5)')
 optional.add_argument('-v', '--verbose', dest='verbose', action='count',
                 help='Increase output verbosity, multiple -v increase verbosity')
-optional.add_argument('--quiet', dest='quiet', action='count',
-                help='Decrease output verbosity to only errors.')
+optional.add_argument('--trigger', dest='trigger',
+                help='Can be used to manually trigger the workflow specified.')
 optional.add_argument('--info', dest='version', action='store_true',
                 help='Display information about the tool and exit')
 optional.add_argument('--no-monitor', dest='nomonitor', action='store_true',
@@ -136,4 +136,7 @@ if args.nomonitor:
     config.MONITOR = False
 
 if args.delete:
-    config.DELETE_REPO = args.delete
+    config.TODELETE = args.delete
+
+if args.trigger:
+    config.TOTRIGGER = args.trigger

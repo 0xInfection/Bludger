@@ -59,8 +59,6 @@ def calcLogLevel(args):
             baseloglevel = 10
         else:
             baseloglevel = 30 - (args.verbose * 10)
-    if args.quiet:
-        baseloglevel = 50
     return baseloglevel
 
 def pheaders(tup: dict):
