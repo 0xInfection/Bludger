@@ -26,7 +26,7 @@ def deleteRepo(slug: str):
         log.error('One or more required parameters got passed invalid params.')
         return None
 
-    log.debug('Trying to delete the repository: %s' % slug)
+    log.info('Trying to delete the repository: %s' % slug)
     baseurl = baseurl.format(slug)
     req = sendQuery("DELETE", baseurl, json=None)
 

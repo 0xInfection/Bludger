@@ -15,17 +15,17 @@ if os.name != 'nt' and os.name != 'mac':
     class color:
         END  = '\033[0m'                # normal
         BOLD  = '\033[1m'               # bold
-        RED  = '\033[1;91m'             # red
-        GREEN  = '\033[1;92m'           # green
-        ORANGE  = '\033[1;93m'          # orange
-        BLUE  = '\033[1;94m'            # blue
-        PURPLE  = '\033[1;95m'          # purple
+        RED  = '\033[91m'             # red
+        GREEN  = '\033[92m'           # green
+        ORANGE  = '\033[93m'          # orange
+        BLUE  = '\033[94m'            # blue
+        PURPLE  = '\033[95m'          # purple
         UNDERLINE = '\033[4m'           # underline
-        CYAN  = '\033[1;36m'            # cyan
-        GREY = '\033[1;97m'             # gray
-        BR = '\033[1;97;41m'            # background red
-        BG = '\033[1;97;42m'            # background green
-        BY = '\033[1;97;43m'            # background yellow
+        CYAN  = '\033[36m'            # cyan
+        GREY = '\033[97m'             # gray
+        BR = '\033[97;41m'            # background red
+        BG = '\033[97;42m'            # background green
+        BY = '\033[97;43m'            # background yellow
 
     O  = '\033[1m\033[97m[!]\033[0m'  # information
     R  = '\033[1m\033[91m[-]\033[0m'  # something's not right

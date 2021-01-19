@@ -10,17 +10,17 @@
 # https://github.com/0xInfection/Parasite
 
 import logging, config
-from core.colors import O, R, color
+from core.colors import R, color
 
 class CustomFormatter(logging.Formatter):
     '''
     Customising my style of logging the results
     '''
     ftl_fmt  = R+" FATAL: %(msg)s"
-    info_fmt = O+" %(msg)s"
-    err_fmt  = color.RED+"[-] ERROR: "+color.END+"%(msg)s"
-    crt_fmt  = color.RED+"[-] CRITICAL: "+color.END+"%(msg)s"
-    dbg_fmt  = color.CYAN+"[~] DEBUG: "+color.END+"%(module)s: %(msg)s"
+    info_fmt = color.BOLD+color.CYAN+"[+] INFO: "+color.END+"%(msg)s"
+    err_fmt  = color.BOLD+color.RED+"[-] ERROR: "+color.END+"%(msg)s"
+    crt_fmt  = color.BOLD+color.RED+"[-] CRITICAL: "+color.END+"%(msg)s"
+    dbg_fmt  = color.BOLD+color.CYAN+"[~] DEBUG: "+color.END+"%(module)s: %(msg)s"
 
     def __init__(self):
         super().__init__(fmt="%(levelno)d: %(msg)s", datefmt=None, style='%')

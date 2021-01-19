@@ -23,9 +23,9 @@ from core.info import (
 )
 
 print('''
-  %sParasite %s- %sA GitHub Actions Automation Framework
+  %s%sParasite %s- %sA GitHub Actions Automation Framework
                %sVersion : v%s%s
-''' % (color.CYAN, color.GREY, color.BLUE, color.RED, __version__, color.END))
+''' % (color.BOLD, color.CYAN, color.GREY, color.BLUE, color.RED, __version__, color.END))
 
 log = logging.getLogger('options')
 

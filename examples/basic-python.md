@@ -49,7 +49,7 @@ Few important points the template says:
 ### Usage:
 Lets see a simplified usage of things:
 
-> __NOTE:__ If you already have a repository up on github, jump to the third step directly.
+> __NOTE:__ If you already have a repository up on github with your scripts in it, jump to the third step directly.
 
 - Create a new repository `pythontest` and clone it locally under `custom/` folder.
     ```bash
