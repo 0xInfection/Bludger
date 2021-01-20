@@ -25,7 +25,7 @@ def createRepo(reponame: str, isprivate: bool):
         log.error('One or more required parameters got passed invalid params.')
         return None
 
-    log.info('Trying to create the repository.')
+    log.info('Trying to create the repository...')
 
     payload = {
         "name"          : reponame,

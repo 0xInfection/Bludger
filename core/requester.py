@@ -43,22 +43,28 @@ def sendQuery(method: str, url: str, **kwargs):
         req = requests.get(url, params=kwargs['params'],
             headers=HEADERS, stream=tostream, timeout=config.HTTP_TIMEOUT)
 
+        if config.DEBUG:
+            pheaders(req.headers)
+            pbody(req.text)
+
         if checkStatus(req.status_code, redir=redirection):
-            if config.DEBUG:
-                pheaders(req.headers)
-                pbody(req.text)
             return req
+        else:
+            log.critical('Error received: %s' % req.json()['errors'])
 
     if method.lower() == 'post':
         log.debug('Making HTTP POST query: '+ url)
         req = requests.post(url, json=kwargs['json'],
             headers=HEADERS, timeout=config.HTTP_TIMEOUT)
 
+        if config.DEBUG:
+            pheaders(req.headers)
+            pbody(req.text)
+
         if checkStatus(req.status_code):
-            if config.DEBUG:
-                pheaders(req.headers)
-                pbody(req.text)
             return req
+        else:
+            log.critical('Error received: %s' % req.json()['errors'])
 
     if method.lower() == 'put':
 
@@ -66,11 +72,14 @@ def sendQuery(method: str, url: str, **kwargs):
         req = requests.put(url, json=kwargs['json'],
             headers=HEADERS, timeout=config.HTTP_TIMEOUT)
 
+        if config.DEBUG:
+            pheaders(req.headers)
+            pbody(req.text)
+
         if checkStatus(req.status_code):
-            if config.DEBUG:
-                pheaders(req.headers)
-                pbody(req.text)
             return req
+        else:
+            log.critical('Error received: %s' % req.json()['errors'])
 
     if method.lower() == 'delete':
 
@@ -78,10 +87,13 @@ def sendQuery(method: str, url: str, **kwargs):
         req = requests.delete(url, json=kwargs['json'],
             timeout=config.HTTP_TIMEOUT, headers=HEADERS)
 
+        if config.DEBUG:
+            pheaders(req.headers)
+            pbody(req.text)
+
         if checkStatus(req.status_code):
-            if config.DEBUG:
-                pheaders(req.headers)
-                pbody(req.text)
             return req
+        else:
+            log.critical('Error received: %s' % req.json()['errors'])
 
     return None

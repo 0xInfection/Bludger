@@ -28,11 +28,12 @@ def getLogs(url: str, path: str):
         log.info('Creating the dir: %s' % path)
         os.makedirs(path)
 
+    log.info('Trying to download the logs...')
     req = sendQuery("GET", url, redirection=True, stream=True, params=None)
     if req is not None:
         try:
             filename = re.search(r'(?i)filename=([^;]+)', req.headers['content-disposition'])
-            log.debug('Inflating the zipped logs: %s' % filename.group(1))
+            log.info('Inflating the zipped logs: %s' % filename.group(1))
 
             zipf = zipfile.ZipFile(io.BytesIO(req.content))
             zipf.extractall(path)

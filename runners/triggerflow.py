@@ -30,7 +30,7 @@ def triggerWorkflow(slug: str, template: bool):
     baseurl = baseurl.format(slug, template)
 
     payload = {
-        "ref" : "main"
+        "ref" : "master"
     }
     log.debug('Sending payload: %s' % payload)
 
@@ -48,7 +48,7 @@ def triggerWorkflow(slug: str, template: bool):
         # retry the request using ref as master instead of main
         # usually returns a 422 unprocessable identity
         payload = {
-            "ref" : "master"
+            "ref" : "main"
         }
         log.debug('Sending payload: %s' % payload)
 
