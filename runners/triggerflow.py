@@ -9,6 +9,7 @@
 # This module requires Bludger
 # https://github.com/0xInfection/Bludger
 
+import time
 from core.colors import G
 import logging, sys
 from core.requester import sendQuery
@@ -33,6 +34,10 @@ def triggerWorkflow(slug: str, template: bool):
         "ref" : "master"
     }
     log.debug('Sending payload: %s' % payload)
+
+    # pause for a few seconds, otheriwse github api gives out a 404
+    log.warning("Pausing for a few seconds to prevent race condition between API endpoints...")
+    time.sleep(10)
 
     # github REST API is extrememly buggy about the name conventions
     # between the master and main, although they are the same thing

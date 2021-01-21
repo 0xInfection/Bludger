@@ -39,5 +39,6 @@ def createRepo(reponame: str, isprivate: bool):
         log.debug('Repo ID: ' + str(req.json()['id']) + ' | Repo URL: ' + req.json()['html_url'])
         return req.json()['full_name']
     else:
+        log.info('Another repository with the same name already exists on your account! Deleting it with --delete flag and trying again.')
         log.fatal('Repository creation failed. Stopping all processes.')
         sys.exit(1)

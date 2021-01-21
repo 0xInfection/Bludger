@@ -33,9 +33,9 @@ def checkStatus(code: int, redir=False):
     elif code == 403:
         log.error('We did something aweful that Github blocked us!')
     elif code == 404:
-        log.error('Recevied 404: Not Found! What went wrong?')
+        log.error('Recevied 404: Not Found! Hmm, we tried doing something that the API doesn\'t know exists?!')
     elif code == 422:
-        log.error('Invalid API query. Status 422: Unprocessable Identity.')
+        log.error('Invalid API query. Status 422: Unprocessable Identity. Something\'s not right.')
     else:
         log.error('Something went wrong.')
     return False
