@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 #-:-:-:-:-:-:-:-:-:-:-:-#
-#       Bludger        #
+#        Bludger        #
 #-:-:-:-:-:-:-:-:-:-:-:-#
 
 # Author: 0xInfection
