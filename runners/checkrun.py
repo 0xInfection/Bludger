@@ -38,7 +38,7 @@ def checkRun(slug: str, template: str, path=None):
         # retry for one more time if the API doesn't give a valid response
         while True:
             if len(req.json()['workflow_runs']) == 0:
-                log.warn('Waiting for workflow to trigger...')
+                log.debug('Waiting for workflow to trigger...')
                 time.sleep(10)
                 req = sendQuery("GET", runsurl, params=None)
             else:

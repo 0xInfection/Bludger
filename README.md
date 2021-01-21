@@ -1,12 +1,14 @@
 <h1 align="center">
   <br>
-  <a href="https://github.com/0xInfection/Bludger"><img src="https://image.ibb.co/cpuYoA/xsstrike-logo.png" alt="XSStrike"></a>
+  <br>
+  <a href="https://github.com/0xInfection/Bludger"><img src="docs/images/logo.png" alt="Bludger" width=33%></a>
+  <br>
   <br>
   Bludger
   <br>
 </h1>
 
-<strong><p align="center">GitHub Actions at your fingertips!</p></strong>
+<strong><p align="center">GitHub Actions at your Fingertips! ✨</p></strong>
 
 <p align="center">
   <a href="https://python.org">
@@ -16,12 +18,12 @@
     <img src="https://img.shields.io/badge/Twitter-@0xInfection-blue.svg?logo=twitter&style=flat-square">
   </a>
   <a href="https://github.com/0xInfection/Bludger/blob/master/LICENSE">
-    <img src="https://img.shields.io/badge/License-BSD%203%20Clause-orange.svg?logo=freebsd&style=flat-square">
+    <img src="https://img.shields.io/badge/License-BSD%203%20Clause-orange.svg?logo=openbsd&style=flat-square">
   </a>
 </p>
 <br>
 <p align="center">
-  <img src="docs/images/bludger-intro.png" alt="intro" />
+  <img src="docs/images/bludger.png" alt="intro" />
 </p>
 
 <p align="center">
@@ -44,7 +46,7 @@ Here are some features which it offers so far:
 - [x] Downloading logs from a finished run.
 
 ### Getting Started
-A few steps to get you quickly started
+A few steps to get you quickly started:
 - Firstly, go ahead and [create a personal access token](https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token) from your developer settings on GitHub. Make sure that `delete_repo`, `repo`, `user` and `workflow` scopes are checked!
 - Get the toolkit.
 ```bash
@@ -93,7 +95,7 @@ Optional Arguments:
   --debug               Enables debug mode & prints out HTTP API responses and headers.
 ```
 
-See the [documentation] for more detailed usage of arguments and parameters. For usage examples, you can take a look at some use-cases documented within this repository. See [examples](docs/examples/).
+See the [documentation](https://github.com/0xInfection/Bludger/wiki) for more detailed usage of arguments and parameters. For usage examples, you can take a look at some use-cases documented within this repository. See [examples](docs/examples/).
 
 ### Contribution & License
 A few ways to contribute:

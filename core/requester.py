@@ -50,7 +50,7 @@ def sendQuery(method: str, url: str, **kwargs):
         if checkStatus(req.status_code, redir=redirection):
             return req
         else:
-            log.critical('Error received: %s' % req.json()['errors'])
+            log.critical('Error received: %s' % req.json()['message'])
 
     if method.lower() == 'post':
         log.debug('Making HTTP POST query: '+ url)
@@ -64,7 +64,7 @@ def sendQuery(method: str, url: str, **kwargs):
         if checkStatus(req.status_code):
             return req
         else:
-            log.critical('Error received: %s' % req.json()['errors'])
+            log.critical('Error received: %s' % req.json()['message'])
 
     if method.lower() == 'put':
 
@@ -79,7 +79,7 @@ def sendQuery(method: str, url: str, **kwargs):
         if checkStatus(req.status_code):
             return req
         else:
-            log.critical('Error received: %s' % req.json()['errors'])
+            log.critical('Error received: %s' % req.json()['message'])
 
     if method.lower() == 'delete':
 
@@ -94,6 +94,6 @@ def sendQuery(method: str, url: str, **kwargs):
         if checkStatus(req.status_code):
             return req
         else:
-            log.critical('Error received: %s' % req.json()['errors'])
+            log.critical('Error received: %s' % req.json()['message'])
 
     return None
