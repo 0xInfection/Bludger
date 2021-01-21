@@ -17,10 +17,10 @@ baseurl = 'https://api.github.com/repos/{}'
 
 def deleteRepo(slug: str):
     '''
-    Creates a repository for the authenticated user
+    Deletes a repository for the authenticated user
     '''
     global baseurl
-    log = logging.getLogger('createRepo')
+    log = logging.getLogger('deleteRepo')
 
     if not slug:
         log.error('One or more required parameters got passed invalid params.')

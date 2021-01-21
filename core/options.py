@@ -11,7 +11,7 @@
 
 import logging, sys
 import argparse, config
-from core.colors import C, color, G
+from core.colors import C, color
 from core.info import (
     __version__,
     __author__,
@@ -69,7 +69,7 @@ optional.add_argument('--public', dest='public', action='store_true',
 optional.add_argument('--clone', dest='clone', action='store_true',
                 help='Clones the repository to the current working directory.')
 optional.add_argument('--cancel', dest='cancel',
-                help='Cancels a workflow with the Run ID supplied.')
+                help='Cancels the last workflow run for a specific configuration.')
 optional.add_argument('--debug', dest='debug', action='store_true',
                 help='Enables debug mode & prints out HTTP API responses and headers.')
 

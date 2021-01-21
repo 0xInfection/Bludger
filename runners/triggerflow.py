@@ -17,7 +17,7 @@ baseurl = 'https://api.github.com/repos/{}/actions/workflows/{}/dispatches'
 
 def triggerWorkflow(slug: str, template: bool):
     '''
-    Creates a repository for the authenticated user
+    Creates a workflow run for the authenticated user
     '''
     global baseurl
     log = logging.getLogger('triggerFlow')

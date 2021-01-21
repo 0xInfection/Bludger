@@ -18,10 +18,10 @@ baseurl = 'https://api.github.com/repos/{}/contents/{}'
 
 def deleteFlow(slug: str, template: str, path='.github/workflows/'):
     '''
-    Creates a repository for the authenticated user
+    Deletes a workflow for the authenticated user
     '''
     global baseurl
-    log = logging.getLogger('createRepo')
+    log = logging.getLogger('deleteFlow')
 
     if not slug:
         log.error('One or more required parameters got passed invalid params.')

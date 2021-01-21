@@ -13,29 +13,33 @@ from core.colors import G
 import logging, sys
 from core.requester import sendQuery
 
+runsurl = 'https://api.github.com/repos/{}/actions/workflows/{}/runs'
 baseurl = 'https://api.github.com/repos/{}/actions/runs/{}/cancel'
 
-def cancelWorkflow(slug: str, runid: bool):
+def cancelWorkflow(slug: str, template: str):
     '''
-    Creates a repository for the authenticated user
+    Cancels a workflow run for the template supplied
     '''
-    global baseurl
-    log = logging.getLogger('triggerFlow')
+    global baseurl, runsurl
+    log = logging.getLogger('cancelFlow')
 
-    if not runid or not slug:
+    if not template or not slug:
         log.error('One or more required parameters got passed invalid params.')
         return None
 
-    baseurl = baseurl.format(slug, runid)
+    template = '{}.yml'.format(template)
+    runsurl = runsurl.format(slug, template)
+    req = sendQuery("GET", runsurl, params=None)
 
-    # github REST API is extrememly buggy about the name conventions
-    # between the master and main, although they are the same thing
-    # useless bullshit in my opinion.
-    req = sendQuery("POST", baseurl, json=None)
     if req is not None:
-        print(G, 'Successfully requested a cancel for workflow: %s' % runid)
-        return True
+        runid = req.json()['workflow_runs'][0]['id']
+        baseurl = baseurl.format(slug, runid)
 
-    else:
-        log.fatal('Could not canel the workflow. Something went wrong!')
-        sys.exit(1)
+        req = sendQuery("POST", baseurl, json=None)
+        if req is not None:
+            print(G, 'Successfully requested a cancel for workflow: %s' % runid)
+            return True
+
+        else:
+            log.fatal('Could not canel the workflow. Something went wrong!')
+            sys.exit(1)

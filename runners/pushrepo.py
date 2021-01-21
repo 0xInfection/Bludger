@@ -15,11 +15,11 @@ import logging, os, sys
 
 def pushRepo(mdir: str, path='./custom/'):
     '''
-    Clones a repository off GitHub
+    Commits and pushes a repository to GitHub
     '''
     global cloneurl
 
-    log = logging.getLogger('cloneRepo')
+    log = logging.getLogger('pushRepo')
     rpath = os.path.join(path, mdir)
 
     if not os.path.exists(rpath):

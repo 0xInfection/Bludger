@@ -17,7 +17,7 @@ def getLogs(url: str, path: str):
     '''
     Grabs the logs for a run and saves it to a directory
     '''
-    log = logging.getLogger('createRepo')
+    log = logging.getLogger('getLogs')
 
     if not url and not path:
         log.error('One or more required parameters got passed invalid params.')
