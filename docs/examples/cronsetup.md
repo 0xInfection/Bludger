@@ -38,7 +38,7 @@ Few important points the template says:
 - It commits back the generated files back to GitHub after the workflow has finished.
 
 ### Usage:
-Lets see a simplified usage of things. In this case, we'll setup a cron to ping hackerone.com on ICMP. Lets type off the one in all command:
+Lets see a simplified usage of things. In this case, we'll setup a cron to ping hackerone.com 4 times on ICMP. Lets type off the one in all command:
 ```bash
 ./bludger.py -n crontest -T cron -C 'ping -c 4 hackerone.com'
 ```

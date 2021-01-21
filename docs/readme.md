@@ -10,5 +10,4 @@ Basic documentations so far:
 Some usage examples and use cases:
 - [Setting some basic python scripts for automation](examples/python.md)
 - [Download and parsing datasets for research](examples/datasets.md)
-- [Using crons as automation](examples/cronsetup.md)
-- [Using Nmap as automation](examples/nmap.md)
+- [Using crons for automation](examples/cronsetup.md)
