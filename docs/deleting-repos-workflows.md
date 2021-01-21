@@ -4,7 +4,7 @@ Deleting a repository is very simple and straightforward (provided you have corr
 
 Simply:
 ```bash
-./parasite.py --delete {github_username}/{repository}
+./bludger.py --delete {github_username}/{repository}
 ```
 > __WARNING:__ The `--delete/-D` switch is very powerful and has capabilities to delete any repository, so please __USE WITH CAUTION__.
 
@@ -14,6 +14,6 @@ Deleting a workflow can be done by the same switch. Deleting a workflow is equiv
 
 Run:
 ```bash
-./parasite.py -s {github_username}/{repository} --delete config.yml
+./bludger.py -s {github_username}/{repository} --delete config.yml
 ```
 Done!

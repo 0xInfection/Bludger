@@ -43,7 +43,7 @@ Few important points the template says:
 ### Usage:
 A single command does the job:
 ```bash
-./parasite.py -n massrun -T masscan -C 'masscan --rate 1000 1.1.1.1/28 -p 1-1024 -oJ 1.1.1.1.json' --save-logs ../logsdir/ --clone
+./bludger.py -n massrun -T masscan -C 'masscan --rate 1000 1.1.1.1/28 -p 1-1024 -oJ 1.1.1.1.json' --save-logs ../logsdir/ --clone
 ```
 Untangling things:
 - Creates new repository `massrun`.

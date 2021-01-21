@@ -78,10 +78,10 @@ Few important points the template says:
 
 - Now, lets go ahead and run the template:
     ```bash
-    ./parasite.py -s {user}/{repository} -T basic-python -C 'wget -q https://opendata.rapid7.com/sonar.udp/2020-12-11-1607672419-udp_mdns_5353.csv.gz && gzip -dkv 2020-12-11-1607672419-udp_mdns_5353.csv.gz && python parse.py 2020-12-11-1607672419-udp_mdns_5353.csv' --save-logs ../logsdir/
+    ./bludger.py -s {user}/{repository} -T basic-python -C 'wget -q https://opendata.rapid7.com/sonar.udp/2020-12-11-1607672419-udp_mdns_5353.csv.gz && gzip -dkv 2020-12-11-1607672419-udp_mdns_5353.csv.gz && python parse.py 2020-12-11-1607672419-udp_mdns_5353.csv' --save-logs ../logsdir/
     ```
     The following things happened here:
-    - We instructed parasite to use the `{user}/{repository}`.
+    - We instructed bludger to use the `{user}/{repository}`.
     - We used the basic-python.yml template.
     - The command can be broken down:
         - Downloads the dataset from the URL - https://opendata.rapid7.com/sonar.udp/2020-12-11-1607672419-udp_mdns_5353.csv.gz using wget.

@@ -50,7 +50,7 @@ Lets see a simplified usage of things:
 
 - Create a new repository `pythontest` and clone it locally under `custom/` folder.
     ```bash
-    ./parasite.py -n pythontest --clone
+    ./bludger.py -n pythontest --clone
     ```
 - Now, put all your scripts inside the fresh cloned repository.
     ```bash
@@ -63,11 +63,11 @@ Lets see a simplified usage of things:
     ```
 - Now its time to push these to GitHub. The below command will automatically commit the files and push it to GitHub. Note, `--push` takes in a repository name cloned under `custom/` folder.
     ```bash
-    ./parasite.py --push pythontest
+    ./bludger.py --push pythontest
     ```
-- Time for the actual hack. Specify your command through the `-C` switch. You can specify multiple commands using bash separators liek `&&` or semicolons `;`. Also we instruct Parasite to save the runtime logs locally in a new folder named `mypage/`.
+- Time for the actual hack. Specify your command through the `-C` switch. You can specify multiple commands using bash separators liek `&&` or semicolons `;`. Also we instruct Bludger to save the runtime logs locally in a new folder named `mypage/`.
     ```bash
-    ./parasite.py -s {username}/pythontest -T basic-python -C 'python hello.py && python yo.py' --save-logs ../logsdir/
+    ./bludger.py -s {username}/pythontest -T basic-python -C 'python hello.py && python yo.py' --save-logs ../logsdir/
     ```
 
-Thats it! Now go ahead and check your results. Additionally if your scripts generate an output file, you can reclone the repository and checkout the output files. Parasite is as flexible as your thoughts!
+Thats it! Now go ahead and check your results. Additionally if your scripts generate an output file, you can reclone the repository and checkout the output files. Bludger is as flexible as your thoughts!

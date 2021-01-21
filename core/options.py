@@ -2,12 +2,12 @@
 # -*- coding: utf-8 -*-
 
 #-:-:-:-:-:-:-:-:-:-:-:-#
-#       Parasite        #
+#       Bludger        #
 #-:-:-:-:-:-:-:-:-:-:-:-#
 
 # Author: 0xInfection
-# This module requires Parasite
-# https://github.com/0xInfection/Parasite
+# This module requires Bludger
+# https://github.com/0xInfection/Bludger
 
 import logging, sys
 import argparse, config
@@ -23,13 +23,13 @@ from core.info import (
 )
 
 print('''
-  %s%sParasite %s- %sA GitHub Actions Automation Framework
+  %s%sBludger %s- %sA GitHub Actions Automation Framework
                %sVersion : v%s%s
 ''' % (color.BOLD, color.CYAN, color.GREY, color.BLUE, color.RED, __version__, color.END))
 
 log = logging.getLogger('options')
 
-parser = argparse.ArgumentParser(usage='./parasite.py -n {repo_name} -A {token} [options]')
+parser = argparse.ArgumentParser(usage='./bludger.py -n {repo_name} -A {token} [options]')
 parser._action_groups.pop()
 
 required = parser.add_argument_group('Required Arguments')

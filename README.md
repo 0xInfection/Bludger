@@ -1,8 +1,8 @@
 <h1 align="center">
   <br>
-  <a href="https://github.com/0xInfection/Parasite"><img src="https://image.ibb.co/cpuYoA/xsstrike-logo.png" alt="XSStrike"></a>
+  <a href="https://github.com/0xInfection/Bludger"><img src="https://image.ibb.co/cpuYoA/xsstrike-logo.png" alt="XSStrike"></a>
   <br>
-  Parasite
+  Bludger
   <br>
 </h1>
 
@@ -15,26 +15,26 @@
   <a href="https://twitter.com/0xInfection">
     <img src="https://img.shields.io/badge/Twitter-@0xInfection-blue.svg?logo=twitter&style=flat-square">
   </a>
-  <a href="https://github.com/0xInfection/Parasite/blob/master/LICENSE">
+  <a href="https://github.com/0xInfection/Bludger/blob/master/LICENSE">
     <img src="https://img.shields.io/badge/License-BSD%203%20Clause-orange.svg?logo=freebsd&style=flat-square">
   </a>
 </p>
 <br>
 <p align="center">
-  <img src="docs/images/parasite-intro.png" alt="intro" />
+  <img src="docs/images/bludger-intro.png" alt="intro" />
 </p>
 
 <p align="center">
-  <a href="https://github.com/0xInfection/Parasite/wiki">Documentation</a> •
-  <a href="https://github.com/0xInfection/Parasite/wiki/Usage">Usage</a> •
+  <a href="https://github.com/0xInfection/Bludger/wiki">Documentation</a> •
+  <a href="https://github.com/0xInfection/Bludger/wiki/Usage">Usage</a> •
   <a href="#getting-started">Getting Started</a>
 </p>
 
 ### About
 
-Parasite is a GitHub Actions Automation Framework presented to you as a CLI! It leverages a powerful templating engine and the Actions REST API to perform various tasks. This enables you to make use the CI on a daily basis for heavy time-consuming tasks to game up your productivity to the next level.
+Bludger is a GitHub Actions Automation Framework presented to you as a CLI! It leverages a powerful templating engine and the Actions REST API to perform various tasks. This enables you to make use the CI on a daily basis for heavy time-consuming tasks to game up your productivity to the next level.
 
-Whether its parsing a dataset for research purposes or running a couple of custom scripts for your daily task, Parasite _simplifies_ everything. Its very similar to a "shell on the web", except the fact that you can easily spin up new instances/workflows with complete control over the target machine on which it is running.
+Whether its parsing a dataset for research purposes or running a couple of custom scripts for your daily task, Bludger _simplifies_ everything. Its very similar to a "shell on the web", except the fact that you can easily spin up new instances/workflows with complete control over the target machine on which it is running.
 
 ### Main Features
 Here are some features which it offers so far:
@@ -48,21 +48,21 @@ A few steps to get you quickly started
 - Firstly, go ahead and [create a personal access token](https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token) from your developer settings on GitHub. Make sure that `delete_repo`, `repo`, `user` and `workflow` scopes are checked!
 - Get the toolkit.
 ```bash
-git clone https://github.com/0xInfection/Parasite.git
-cd Parasite/
+git clone https://github.com/0xInfection/Bludger.git
+cd Bludger/
 ```
 - Put the access token in the `ACCESS_TOKEN` field in the [`config.py`](config.py) (line 7), so that it looks like:
 ```python
 ACCESS_TOKEN = '29ab0cb8097087bca90890980980ab980bb00ac'
 ```
 - Now you can go ahead and use it, here is the help output from the tool:
-```groovy
-$ ./parasite.py -h
+```bash
+$ ./bludger.py -h
 
-  Parasite - A GitHub Actions Automation Framework
+  Bludger - A GitHub Actions Automation Framework
                Version : v0.1.0
 
-usage: ./parasite.py -n {repo_name} -A {token} [options]
+usage: ./bludger.py -n {repo_name} -A {token} [options]
 
 Required Arguments:
   -n REPO, --new REPO   Creates a new repository with supplied name, invalid if -s is specified.
@@ -102,7 +102,7 @@ A few ways to contribute:
 - Open a pull request
 - Spread the word
 
-Parasite is licensed under the BSD 3-Clause License, see [LICENSE](LICENSE) for more information.
+Bludger is licensed under the BSD 3-Clause License, see [LICENSE](LICENSE) for more information.
 
 ### Final Words
 This tool was intended to make lives easier. Whether you are a guy who cannot afford a VPS to run a monitoring setup on, or someone who just wants to multitask on a wholly different level, this tool is for everyone. If you know what you're doing, an entirely new world of possibilities to level up your productivity waits ahead of you!

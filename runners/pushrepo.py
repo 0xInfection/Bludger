@@ -2,12 +2,12 @@
 # -*- coding: utf-8 -*-
 
 #-:-:-:-:-:-:-:-:-:-:-:-#
-#       Parasite        #
+#       Bludger        #
 #-:-:-:-:-:-:-:-:-:-:-:-#
 
 # Author: 0xInfection
-# This module requires Parasite
-# https://github.com/0xInfection/Parasite
+# This module requires Bludger
+# https://github.com/0xInfection/Bludger
 
 from git import Repo
 from core.colors import G
@@ -29,8 +29,8 @@ def pushRepo(mdir: str, path='./custom/'):
     log.info('Trying to commit files in the repository...')
 
     os.chdir(rpath)
-    os.system('git config user.email "python.automation@parasite.github"')
-    os.system('git config user.name "parasite.automation"')
+    os.system('git config user.email "python.automation@bludger.github"')
+    os.system('git config user.name "bludger.automation"')
 
     try:
         repo = Repo('.')

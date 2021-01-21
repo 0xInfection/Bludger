@@ -1,4 +1,4 @@
-### Welcome to Parasite Documentation
+### Welcome to Bludger Documentation
 
 Basic documentations so far:
 - [Creating & cloning new repositories](create-clone-repos.md)

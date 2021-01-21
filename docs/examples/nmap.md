@@ -43,7 +43,7 @@ Few important points the template says:
 ### Usage:
 A single command does the job:
 ```bash
-./parasite.py -n nmaprun -T nmap -C 'nmap -p 80,443 1.1.1.1/28 -T4 -oX 1.1.1.1.xml' --clone
+./bludger.py -n nmaprun -T nmap -C 'nmap -p 80,443 1.1.1.1/28 -T4 -oX 1.1.1.1.xml' --clone
 ```
 Untangling things:
 - Creates new repository `nmaprun`.

@@ -3,5 +3,5 @@ As soon as you have triggered a workflow, you can also download the logs of the 
 
 Manually triggering the workflow
 ```bash
-./parasite.py -s {username}/{repository} --trigger {template name}
+./bludger.py -s {username}/{repository} --trigger {template name}
 ```

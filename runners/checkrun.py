@@ -2,12 +2,12 @@
 # -*- coding: utf-8 -*-
 
 #-:-:-:-:-:-:-:-:-:-:-:-#
-#       Parasite        #
+#       Bludger        #
 #-:-:-:-:-:-:-:-:-:-:-:-#
 
 # Author: 0xInfection
-# This module requires Parasite
-# https://github.com/0xInfection/Parasite
+# This module requires Bludger
+# https://github.com/0xInfection/Bludger
 
 from core.colors import G, GR
 import time, logging

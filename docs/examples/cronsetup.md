@@ -40,7 +40,7 @@ Few important points the template says:
 ### Usage:
 Lets see a simplified usage of things. In this case, we'll setup a cron to ping hackerone.com on ICMP. Lets type off the one in all command:
 ```bash
-./parasite.py -n crontest -T cron -C 'ping -c 4 hackerone.com'
+./bludger.py -n crontest -T cron -C 'ping -c 4 hackerone.com'
 ```
 
 Thats it!

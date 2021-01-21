@@ -2,12 +2,12 @@
 # -*- coding: utf-8 -*-
 
 #-:-:-:-:-:-:-:-:-:-:-:-#
-#       Parasite        #
+#       Bludger        #
 #-:-:-:-:-:-:-:-:-:-:-:-#
 
 # Author: 0xInfection
-# This module requires Parasite
-# https://github.com/0xInfection/Parasite
+# This module requires Bludger
+# https://github.com/0xInfection/Bludger
 
 ############################################
 ##            ACCESS SETTINGS             ##
@@ -18,7 +18,7 @@ ACCESS_TOKEN = None
 
 # Headers which we send to the github api
 HEADERS = {
-    'User-Agent': 'parasite/0.1.0',
+    'User-Agent': 'bludger/0.1.0',
     'Accept': 'application/vnd.github.v3+json',
     'Authorization': 'token {}'
 }
