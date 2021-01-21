@@ -20,6 +20,7 @@ class CustomFormatter(logging.Formatter):
     info_fmt = color.BOLD+color.ORANGE+"[*] INFO: "+color.END+"%(msg)s"
     err_fmt  = color.BOLD+color.RED+"[-] ERROR: "+color.END+"%(msg)s"
     crt_fmt  = color.BOLD+color.RED+"[-] CRITICAL: "+color.END+"%(msg)s"
+    warn_fmt = color.BOLD+color.BLUE+"[-] WARNING: "+color.END+"%(msg)s"
     dbg_fmt  = color.BOLD+color.CYAN+"[~] DEBUG: "+color.END+"%(module)s: %(msg)s"
 
     def __init__(self):
@@ -43,6 +44,9 @@ class CustomFormatter(logging.Formatter):
 
         elif record.levelno == logging.FATAL:
             self._style._fmt = CustomFormatter.ftl_fmt
+
+        elif record.levelno == logging.WARNING:
+            self._style._fmt = CustomFormatter.warn_fmt
 
         result = logging.Formatter.format(self, record)
         self._style._fmt = format_orig
