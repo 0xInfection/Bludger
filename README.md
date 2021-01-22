@@ -1,10 +1,12 @@
 <h1 align="center">
   <br>
   <br>
-  <a href="https://github.com/0xInfection/Bludger"><img src="docs/images/logo.png" alt="Bludger" width=33%></a>
+  <a href="https://github.com/0xInfection/Bludger">
+    <img src="docs/images/logo.png" alt="Bludger" width=33%>
+  </a>
   <br>
   <br>
-  Bludger
+    Bludger
   <br>
 </h1>
 
