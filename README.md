@@ -46,56 +46,10 @@ Here are some features which it offers so far:
 - [x] Downloading logs from a finished run.
 
 ### Getting Started
-A few steps to get you quickly started:
-- Firstly, go ahead and [create a personal access token](https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token) from your developer settings on GitHub. Make sure that `delete_repo`, `repo`, `user` and `workflow` scopes are checked!
-- Get the toolkit.
-```bash
-git clone https://github.com/0xInfection/Bludger.git
-cd Bludger/
-```
-- Put the access token in the `ACCESS_TOKEN` field in the [`config.py`](config.py) (line 7), so that it looks like:
-```python
-ACCESS_TOKEN = '29ab0cb8097087bca90890980980ab980bb00ac'
-```
-- Now you can go ahead and use it, here is the help output from the tool:
-```bash
-$ ./bludger.py -h
-
-  Bludger - A GitHub Actions Automation Framework
-               Version : v0.1.0
-
-usage: ./bludger.py -n {repo_name} -A {token} [options]
-
-Required Arguments:
-  -n REPO, --new REPO   Creates a new repository with supplied name, invalid if -s is specified.
-  -A TOKEN, --token TOKEN
-                        GitHub personal access token to use, not required if already configured in `config.py`
-  -s SLUG, --slug SLUG  Repository slug if you want to use an existing repository, invalid when -n is specified
-
-Optional Arguments:
-  -S LOGS, --save-logs LOGS
-                        Destination path to save logs of the current workflow run.
-  -T TEMPLATE, --template TEMPLATE
-                        Configuration template to use for creating a workflow.
-  -C COMMAND, --command COMMAND
-                        Command to run for the specified template (if it accepts one).
-  -P TOPUSH, --push TOPUSH
-                        Commits and pushes a local changes to GitHub (must be present under custom/ folder).
-  -D DELETE, --delete DELETE
-                        Deletes something, it can be either a repository slug or a workflow template.
-  -t TIMEOUT, --timeout TIMEOUT
-                        HTTP timeout value in seconds (default: 5)
-  -v, --verbose         Increase output verbosity, multiple -v increase verbosity
-  --trigger TRIGGER     Can be used to manually trigger the workflow specified.
-  --info                Display information about the tool and exit
-  --no-monitor          Tells the program to not monitor the current workflow run.
-  --public              Sets the visibility of a created repository as public. Valid only when -n is specified.
-  --clone               Clones the repository to the current working directory.
-  --cancel CANCEL       Cancels a workflow with the Run ID supplied.
-  --debug               Enables debug mode & prints out HTTP API responses and headers.
-```
-
-See the [documentation](https://github.com/0xInfection/Bludger/wiki) for more detailed usage of arguments and parameters. For usage examples, you can take a look at some use-cases documented within this repository. See [examples](docs/examples/).
+- Lets [quickly set you up](https://github.com/0xInfection/Bludger/wiki/Setup).
+- Read [how to use the tool](https://github.com/0xInfection/Bludger/wiki/Usage).
+- Learn about [writing templates](https://github.com/0xInfection/Bludger/wiki/Templates).
+- Look at some [example use-cases](https://github.com/0xInfection/Bludger/wiki/Use-Cases).
 
 ### Contribution & License
 A few ways to contribute:
