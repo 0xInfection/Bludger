@@ -22,6 +22,10 @@ jobs:
     # your repository itself on GitHub.
     - run: ${{ github.event.inputs.command }}
 
+    # github doesn't allow you to commit files > 100M
+    - name: Pruning files greater than 100MB
+      run: find . -size +99M -delete
+
     env:
       GIT_COMMITTER_NAME: GitHub Actions Shell
       GIT_AUTHOR_NAME: GitHub Actions Shell

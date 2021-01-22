@@ -18,6 +18,10 @@ jobs:
       - name: Run masscan on a set of targets
         run: {command}
 
+      # github doesn't allow you to commit files > 100M
+      - name: Pruning files greater than 100MB
+        run: find . -size +99M -delete
+
       - name: Commit and push
         uses: stefanzweifel/git-auto-commit-action@v4.2.0
         with:
