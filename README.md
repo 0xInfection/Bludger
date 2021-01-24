@@ -65,4 +65,6 @@ Bludger is licensed under the BSD 3-Clause License, see [LICENSE](LICENSE) for m
 ### Final Words
 This tool was intended to make lives easier. Whether you are a guy who cannot afford a VPS to run a monitoring setup on, or someone who just wants to multitask on a wholly different level, this tool is for everyone. If you know what you're doing, an entirely new world of possibilities to level up your productivity waits ahead of you!
 
+P.S.: Neither me, nor any of the contributors of this tool are responsible for what you do with it. It is entirely the end-users' responsibility to comply with [GitHub's Terms](https://docs.github.com/en/github/site-policy/github-additional-product-terms#5-actions-and-packages).
+
 > Crafted with ❤️ by [@0xInfection](https://twitter.com/0xInfection)
