@@ -40,6 +40,8 @@ Bludger is a GitHub Actions Automation Framework presented to you as a CLI! It l
 
 Whether its parsing a dataset for research purposes or running a couple of custom scripts for your daily task, Bludger _simplifies_ everything. Its very similar to a "shell on the web", except the fact that you can easily spin up new instances/workflows with complete control over the target machine on which it is running.
 
+> Related blog: https://medium.com/@0xInfection/utilizing-ci-cds-to-the-fullest-for-fun-and-profit-78f73d505fd0
+
 ### Main Features
 Here are some features which it offers so far:
 - [x] Powerful & extremely customisable templating engine.
